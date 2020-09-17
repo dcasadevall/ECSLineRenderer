@@ -62,7 +62,7 @@ namespace E7.ECS.LineRenderer
                         var lineStyle = ac.GetSharedComponentData<LineStyle>(lineStyleType, EntityManager);
 
                         //Filter to narrow down chunk operation.
-                        newRegisterQuery.SetSharedComponentFilter(lineStyle);
+                        newRegisterQuery.SetFilter(lineStyle);
                         ecb.AddSharedComponent(newRegisterQuery,
                             new RenderMesh {mesh = lineMesh, material = lineStyle.material});
                     }
